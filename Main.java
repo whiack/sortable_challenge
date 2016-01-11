@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
-import org.json.*;
+// import org.json.*;
 import org.json.simple.JSONValue;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -64,10 +64,10 @@ public class Main {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-		File file_products = new File("/Users/blaite/Desktop/challenge_data_20110429/products.txt");
+		File file_products = new File("/Users/blaite/Desktop/sortable_challenge/products.txt");
 		Scanner scanner_products = new Scanner(file_products);
 		
-		File file_list = new File("/Users/blaite/Desktop/challenge_data_20110429/listings.txt");
+		File file_list = new File("/Users/blaite/Desktop/sortable_challenge/listings.txt");
 		Scanner scanner_list = new Scanner(file_list);
 		
 		String product_name;
