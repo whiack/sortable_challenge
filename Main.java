@@ -18,7 +18,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
-// import org.json.*;
 import org.json.simple.JSONValue;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -147,7 +146,7 @@ public class Main {
 							//added the model and family without spaces
 							mmf.add(mf.get(i).get(0));
 							mmf.add(mf.get(i).get(1));
-//							System.out.println(mmf);
+							
 							if(product_name_map.get(mmf) != null) {
 								String p_name = product_name_map.get(mmf);								
 								Listing l = new Listing(title_o, manufacturer_l_o, currency, price);
@@ -165,7 +164,7 @@ public class Main {
 								}
 							}
 							else {
-								System.out.println(-1);
+								// System.out.println(-1);
 							}
 							
 						}
@@ -185,7 +184,7 @@ public class Main {
 			ArrayList<JSONObject> obj_list = new ArrayList<JSONObject>();
 			
 			Iterator it = result.entrySet().iterator();
-			PrintWriter writer = new PrintWriter("match_result.txt", "UTF-8");
+			// PrintWriter writer = new PrintWriter("match_result.txt", "UTF-8");
 			for (Map.Entry<String, ArrayList<Listing>> entry : result.entrySet()) {
 				JSONObject obj = new JSONObject();
 		        String key = entry.getKey().toString();;
@@ -194,7 +193,6 @@ public class Main {
 		        obj.put("product name", key);
 		        JSONArray lsting = new JSONArray();
 
-		        
 		        for(int i = 0 ; i < value.size(); i++ ) {
 		        	Listing l = value.get(i);
 
@@ -208,34 +206,10 @@ public class Main {
 		        }
 		        obj.put("listing", lsting);
 	        	String jsonText = JSONValue.toJSONString(obj);
-
-	        	writer.println(jsonText);
+	        	// writer.println(jsonText);
 				System.out.println(jsonText);
 			}
-			
-			writer.close();
-			
-
-			
-//			PrintWriter writer = new PrintWriter("match_result.txt", "UTF-8");
-//			Iterator it = result.entrySet().iterator();
-//			for (Map.Entry<String, ArrayList<Listing>> entry : result.entrySet()) {
-//		        String key = entry.getKey().toString();;
-//		        ArrayList<Listing> value = entry.getValue();
-//		        StringBuffer listing_s = new StringBuffer();
-//		        listing_s.append("{");
-//		        
-//		        for(int i = 0 ; i < value.size(); i++ ) {
-//		        	Listing l = value.get(i);
-//		        	listing_s.append("[ title: "+ l.title + ", manufacturer: " + l.manufacturer + ", currency: "+l.currency+", price: "+l.price+"]");
-//		        }
-//		        listing_s.append("}");
-//		        
-//		        String result_line = "product name = " + key + " listing = " + listing_s ;
-//		    
-//		        writer.println(result_line);
-//			}
-//			writer.close();
+			// writer.close();
 		} finally {
 			scanner_products.close();
 		}
