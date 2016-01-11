@@ -1,0 +1,34 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.lang.Object;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Match {
+	HashMap<String,Integer> model_price;
+	HashMap<String,HashMap<String, Integer>> match_table;
+
+	public void getProductName(String line) {
+		int index_name = line.indexOf("product_name");
+		System.out.println(index_name);
+	}
+
+	public void getHashed(String line) {
+
+	}
+	public void main() throws FileNotFoundException {
+		File file = new File("/Users/blaite/Desktop/challenge_data_20110429/products.txt");
+		StringBuilder fileContents = new StringBuilder((int) file.length());
+		Scanner scanner = new Scanner(file);
+		String lineSeparator = System.getProperty("line.separator");
+
+		try {
+			while(scanner.hasNextLine()) {
+				fileContents.append(scanner.nextLine() + lineSeparator);
+			}
+			//return fileContents.toString();
+		} finally {
+			scanner.close();
+		}
+	}
+}
