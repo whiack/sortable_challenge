@@ -44,8 +44,8 @@ public class Main {
 		int name_begin = line.indexOf(element) + element.length() + 3;
 		int name_end = 0;
 
-		//if we need to consider "sony dc" and "sony" as the same company 
-		//we just need to remove everything after the space
+		//if we need to consider "sony canada" and "sony" as the same company 
+		//we just need to remove everything after the space, I assume there are no "canada sony"
 		for( name_end = name_begin; line.charAt(name_end) != '"' /*&& line.charAt(name_end) != ' '*/; name_end ++) {}
 		String key = line.substring(name_begin, name_end);
 		return key;
