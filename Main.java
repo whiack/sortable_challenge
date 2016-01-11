@@ -1,14 +1,3 @@
-/*
-I found out that there is a very high miss rate because out the
-manufaturer in list.txt has family name in it.
-Consider the company prefer lower recall to false positives,
-I decided not to remove everything after the space ,
-in case "sony" and "sony fs" are different companies. 
-Also, I decided not see "Fuji" and "Fujifilm" 
-as the same company, since there might have "sony" and "sonya" as 
-different companies.
-*/
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -146,7 +135,7 @@ public class Main {
 							//added the model and family without spaces
 							mmf.add(mf.get(i).get(0));
 							mmf.add(mf.get(i).get(1));
-							
+
 							if(product_name_map.get(mmf) != null) {
 								String p_name = product_name_map.get(mmf);								
 								Listing l = new Listing(title_o, manufacturer_l_o, currency, price);
